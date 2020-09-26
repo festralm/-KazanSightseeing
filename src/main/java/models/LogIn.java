@@ -19,9 +19,9 @@ public class LogIn {
         Cookie cookie = new Cookie("user", login + password);
 
         if (servletRequest.getParameter("remember") == null) {
-            cookie.setMaxAge(60 * 30);
+            cookie.setMaxAge(60 * 60 * 24);
         } else {
-            cookie.setMaxAge(60 * 60 * 2);
+            cookie.setMaxAge(-1);
         }
 
         httpServletResponse.addCookie(cookie);

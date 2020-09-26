@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "MainFilter")
+@WebFilter(filterName = "GlobalFilter")
 public class GlobalFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         final HttpServletRequest httpServletRequest = (HttpServletRequest) request;

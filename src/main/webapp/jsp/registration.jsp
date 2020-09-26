@@ -22,12 +22,12 @@
             out.println("<p>That username already exists</p>");
         }
     %>
-    <form method="post" action="registration">
+    <form method="post" action="reg">
         <p><input type="text" required placeholder="login" name="login"></p>
         <p><input type="password" required placeholder="password" name="password"></p>
         <br>
         <p><input type="submit" value="Register"></p>
-        <p><input type="checkbox" name="remember" id="remember"> <label for="remember">Remember me</label></p>
+        <p><input type="checkbox" name="remember" id="remember"> <label for="remember">Запомнить</label></p>
     </form>
 </div>
 </body>
