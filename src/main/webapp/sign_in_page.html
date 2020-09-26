@@ -2,29 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>D[jl</title>
-    <link rel="stylesheet" type="text/css" href="styles/sign_in_page.css">
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="styles/authorization.css">
+    <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
+    <link rel="stylesheet" type="text/css" href="styles/authorisation_menu.css">
 </head>
 <body>
-<menu class="menu" role="menu">
-    <a href="welcome_page.html" id="welcome_page">Kazan Sightseeing</a>
-    <a href="sign_in_page.html" id="sign_in">Войти</a>
-    <a href="sign_in_page.html" id="register">Зарегистрироваться</a>
-</menu>
-<header role="banner">
-    <h1>Вход</h1>
+<header>
+    <menu class="menu" role="menu" id="menu">
+        <div class="page_name" id="page_name">
+            <a href="welcome_page.html">Kazan Sightseeing</a>
+        </div>
+        <div class="authorization" id="authorization">
+            <div class="sign_in" id="sign_in">
+                <a href="sign_in_page.html" >Войти</a>
+            </div>
+            <div class="register" id="register">
+                <a href="registration_page.html" >Зарегистрироваться</a>
+            </div>
+        </div>
+    </menu>
 </header>
-<form method="post" action="">
-    <p><label><input type="text" name="username" id="username" placeholder="Имя пользователя"/></label></p>
-    <p><label><input type="password" name="password" id="password" placeholder="Введите пароль"/></label></p>
-    <p><input class="button" type="submit" name="submit" id="submit" value="Войти"/></p>
-    <p><label><input type="checkbox" name="remember_me">Запомнить меня</label></p>
-    <a class="registration" id="registration" href="registration_page.html">Ещё не зарегистрированы?</a>
-</form>
+<div class="authorization_form">
+    <h1>Вход</h1>
+    <form method="post" action="">
+        <p><label><input type="text" name="username" id="username" placeholder="Имя пользователя"/></label></p>
+        <p><label><input type="password" name="password" id="password" placeholder="Введите пароль"/></label></p>
+        <p class="remember_me"><label><input type="checkbox" name="remember_me" id="remember_me_check">Запомнить меня</label></p>
+        <p><input class="button" type="submit" name="submit" id="submit" value="Войти"/></p>
+        <a class="registration" id="registration" href="registration_page.html">Ещё не зарегистрированы?</a>
+    </form>
+</div>
 <footer>
     <ul>
-        <li>Помощь</li>
-        <li>Предложить достопримечательность</li>
+        <li><a href="help.html">Помощь</a></li>
+        <li><a href="offer_sight.html">Предложить достопримечательность</a></li>
+        <li><a href="wright_us.html">Написать нам</a></li>
     </ul>
 </footer>
 </body>
