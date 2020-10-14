@@ -24,7 +24,7 @@ public class RegistrationServlet extends HttpServlet {
         if (CheckSession.check(req.getSession(), req)) {
             resp.sendRedirect(req.getContextPath());
         } else {
-            String path = "/jsp/registration.jsp";
+            String path = "registration_page.html";
             ServletContext servletContext = getServletContext();
             RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
             requestDispatcher.forward(req, resp);

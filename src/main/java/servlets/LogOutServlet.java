@@ -12,6 +12,9 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LogOutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    }
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (CheckSession.check(req.getSession(), req)) {
             Cookie cookie = new Cookie("user", "");
             cookie.setMaxAge(0);
@@ -19,10 +22,7 @@ public class LogOutServlet extends HttpServlet {
             resp.addCookie(cookie);
         }
 
-        resp.sendRedirect("/kazanSightseeing/");
-    }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("/kazansightseeing_web_exploded/");
 
     }
 }

@@ -17,9 +17,9 @@ public class GlobalFilter implements Filter {
         final HttpSession session = httpServletRequest.getSession();
 
         if (CheckSession.check(session, httpServletRequest)) {
-            request.getRequestDispatcher("html/helloPageAuthorized.html").forward(request, response);
+            request.getRequestDispatcher("/home_page.html").forward(request, response);
         } else {
-            request.getRequestDispatcher("html/helloPageNonAuthorized.html").forward(request, response);
+            request.getRequestDispatcher("/welcome_page.html").forward(request, response);
         }
     }
 

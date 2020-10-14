@@ -34,7 +34,7 @@ public class RegistrationFilter implements Filter {
                 LogIn.logIn(login, password, request, response, httpServletRequest, httpServletResponse);
             } else {
                 httpServletRequest.getSession().setAttribute("check_login", false);
-                request.getRequestDispatcher("jsp/registration.jsp").forward(request, response);
+                request.getRequestDispatcher("/registration_page.html").forward(request, response);
             }
         }
     }

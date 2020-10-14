@@ -26,6 +26,6 @@ public class LogIn {
 
         httpServletResponse.addCookie(cookie);
 
-        servletRequest.getRequestDispatcher("html/helloPageAuthorized.html").forward(servletRequest, servletResponse);
+        servletRequest.getRequestDispatcher("/home_page.html").forward(servletRequest, servletResponse);
     }
 }

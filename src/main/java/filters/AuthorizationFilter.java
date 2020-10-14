@@ -33,7 +33,7 @@ public class AuthorizationFilter implements Filter {
                 LogIn.logIn(login, password, request, response, httpServletRequest, httpServletResponse);
             } else {
                 httpServletRequest.getSession().setAttribute("check_password", false);
-                request.getRequestDispatcher("jsp/authorization.jsp").forward(request, response);
+                request.getRequestDispatcher("sign_in_page.html").forward(request, response);
             }
         }
     }
