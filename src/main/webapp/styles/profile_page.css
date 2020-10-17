@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.menu {
+    height: 55px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+.all {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 76px;
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+}
+
+header {
+    padding: 5px;
+    background-color: white;
+}
+
+.page_name {
+    float: left;
+    padding: 10px 0 10px 0;
+}
+
+.page_name a{
+    font-weight: 600;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border: 0;
+}
+
+
+footer {
+    color: #A7A7A7;
+    background: #D6E4CF; /* Цвет фона */
+    padding-bottom: 10px; /* Поля вокруг текста */
+    padding-top: 10px;
+    flex: 0 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.avatar {
+    height: 220px;
+    float: left;
+    margin: 40px 120px;
+}
+
+input {
+    background-color: white;
+    border: 1.5px solid #d9d9d9;
+    height: 40px;
+    width: 400px;
+    color: black;
+}
+
+h2 {
+    color: black;
+    text-align: left;
+    padding-bottom: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+
+    /*background: linear-gradient(120deg, #505ADD, #804FD1, #C449B3, #FAA62E);*/
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
+    padding-top: 10px;
+}
+
+.btn {
+    font-size: 17px;
+    font-weight: bold;
+    background-image: linear-gradient(#48E000, #00C797);
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+a.rimg {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    background: #67C03C;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
+    text-decoration: none;
+}
+
+.reg, .button {
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: 15px;
+    background: white;
+    vertical-align: center;
+}
+
+.label-text {
+    display: inline-block;
+    width: 200px;
+}
+
+.box {
+    float: left;
+
+}
+
+a:hover {
+    text-decoration: solid #67C03C underline;
+}
+
+nav {
+    float: right;
+    top: 8%;
+    left: 22%;
+    position: absolute;
+    text-align: center;
+}
+

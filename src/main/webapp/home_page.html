@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KS</title>
+    <link rel="stylesheet" type="text/css" href="styles/home_page.css">
+    <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
+    <link rel="stylesheet" type="text/css" href="styles/welcome_page.css">
+    <!--    <link rel="stylesheet" type="text/css" href="myStyles/home_page.css">-->
+</head>
+<body>
+<header>
+    <menu class="menu" role="menu" id="menu">
+        <div class="page_name" id="page_name">
+            <a href="http://localhost:8080/ks">Kazan <span class="colortext">Sightseeing</span></a>
+        </div>
+        <div class="sub_nav">
+            <a href="http://localhost:8080/ks/profile" class="sub_nav_main">Профиль</a>
+            <div class="sub_nav_content">
+                <ul>
+                    <li><a href="my_achieves.html" id="my_archives">Мои достижения</a></li>
+                    <li><a href="my_rating.html" id="my_rating">Мой рейтинг</a></li>
+                    <li><a href="visited.html" id="visited">Посещенные</a></li>
+                    <li><a href="highlighted.html" id="highlighted">Любимые места</a></li>
+                    <li><a href="will_visit.html" id="will_visit">Желаю посетить</a></li>
+                    <li><a href="http://localhost:8080/ks/logout" id="log_out">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+    </menu>
+</header>
+
+<div class="map" id="map">
+    <progress max="100" value="25">
+        <span id="value"></span>%
+    </progress>
+
+    <h3>Куда отправимся дальше?</h3>
+
+    <img src="https://sun9-65.userapi.com/ZFW5ZAGSgWv0BQuh7Ee0bthdK3Pr-_esfzKH1w/uXRLfBbDSNo.jpg" id="mapp" alt="Карта" class="karta">
+</div>
+
+<footer>
+    <p>Мы всегда готовы Вам помочь!</p>
+    <p>По всем вопросам пишите на почту: email.example@gmail.com</p>
+</footer>
+
+</body>
+</html>

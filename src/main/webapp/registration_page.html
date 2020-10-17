@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="styles/registration_page.css">
+    <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
+    <link rel="stylesheet" type="text/css" href="styles/authorisation_menu.css">
+
+</head>
+<body>
+<header>
+    <menu class="menu" role="menu" id="menu">
+        <div class="page_name" id="page_name">
+            <a href="http://localhost:8080/ks">Kazan <span class="colortext">Sightseeing</span></a>
+        </div>
+        <div class="authorization" id="authorization">
+            <div class="sign_in" id="sign_in">
+                <a href="http://localhost:8080/ks/authorize">Войти</a>
+            </div>
+        </div>
+    </menu>
+</header>
+
+<div class="form">
+    <div class="image">
+    </div>
+
+    <div class="authorization_form">
+        <form method="post" action="registerin">
+            <h1>Регистрация</h1>
+            <div>
+                <input type="text" name="username" id="username" placeholder=" " required/>
+                <label for="username">Имя и фамилия</label>
+            </div>
+
+            <div>
+                <input type="email" name="email" id="email" placeholder=" " required/>
+                <label for="email">E-mail</label>
+
+                <div class="requirements">
+                    E-mail введён некорректно
+                </div>
+            </div>
+
+            <div>
+                <input type="password" name="password" id="password" placeholder=" " minlength="8" maxlength="32"
+                       required/>
+                <label for="password">Введите пароль</label>
+
+                <div class="requirements">
+                    Пароль должен содержать не менее 8 знаков
+                </div>
+            </div>
+
+            <div>
+                <input type="password" name="repeat_password" id="repeat_password" placeholder=" " minlength="8"
+                       maxlength="32"
+                       required/>
+                <label for="repeat_password">Повторите пароль</label>
+
+                <div class="requirements">
+                    Введённые пароли не совпадают
+                </div>
+            </div>
+
+            <p>
+                <label><input type="checkbox" name="remember_me">Запомнить меня</label>
+            </p>
+
+            <p>
+                <input class="button" type="submit" name="submit" id="submit" value="Г О Т О В О !"/>
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<!--<div class="form" id="form">-->
+<!--    <div class="authorization_form">-->
+<!--        <h1>Регистрация</h1>-->
+<!--        <form method="post" action="">-->
+<!--            <p><label><input type="text" name="username" id="username" placeholder="Имя пользователя"/></label></p>-->
+<!--            <p><label><input type="email" name="email" id="email" placeholder="E-mail"/></label></p>-->
+<!--            <p><label><input type="password" name="password" id="password" placeholder="Введите пароль"/></label></p>-->
+<!--            <p><label><input type="password" name="repeat_password" id="repeat_password" placeholder="Повторите пароль"/></label></p>-->
+<!--            <p><label><input type="checkbox" name="remember_me">Запомнить меня</label></p>-->
+<!--            <p><input class="button" type="submit" name="submit" id="submit" value="Г О Т О В О !"/></p>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<footer>
+    <p>Мы всегда готовы Вам помочь!</p>
+    <p>По всем вопросам пишите на почту: email.example@gmail.com</p>
+</footer>
+
+</body>
+</html>
