@@ -41,7 +41,7 @@ public class RegistrationFilter implements Filter {
             if (CheckSession.check(session, request)) {
                 response.sendRedirect(request.getContextPath());
             } else {
-                if (!dao.isUsernameExist(username)) {
+                if (password1.length >= 8 && password1.length <= 32 && !dao.isUsernameExist(username)) {
                     final int cost = (int) request.getServletContext().getAttribute("cost");
                     PasswordAuthentication passwordAuthentication = new PasswordAuthentication(cost);
                     String passwordHash = passwordAuthentication.hashPassword(password1);

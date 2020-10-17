@@ -17,13 +17,7 @@ import java.io.IOException;
 public class ProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        final HttpSession session = request.getSession();
-//        ServletContext servletContext = getServletContext();
-//        if (CheckSession.check(session, request)) {
-//            servletContext.getRequestDispatcher("/pages/helloPageForUser.html").forward(request, response);
-//        } else {
-//            servletContext.getRequestDispatcher("/pages/helloPage.html").forward(request, response);
-//        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +33,13 @@ public class ProfileServlet extends HttpServlet {
             User user = userDao.getUserByUsername(username);
 
 
+            request.setAttribute("fullname", user.getFullname());
+            request.setAttribute("username", username);
+            request.setAttribute("email", user.getEmail());
+            request.setAttribute("birthdate", user.getBirthdate());
+            request.setAttribute("password", user.getPassword());
+
+            request.getRequestDispatcher("").forward(request, response);
 
         } else {
             response.sendRedirect("/authorize");

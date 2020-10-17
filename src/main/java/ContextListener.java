@@ -38,23 +38,25 @@ public class ContextListener implements ServletContextListener,
 
         PasswordAuthentication passwordAuthentication = new PasswordAuthentication(cost);
 
-        User alia = new User();
-        alia.setUsername("alia");
-        alia.setPassword(passwordAuthentication.hashPassword("alia".toCharArray()));
-        alia.setEmail("alia@gmail.com");
-        alia.setBirthdate(new Date(2000, 1, 25));
-        alia.setFullname("Миннегараева Алия Рустемовна");
+        if (!userDao.isUsernameExist("alia")) {
+            User alia = new User();
+            alia.setUsername("alia");
+            alia.setPassword(passwordAuthentication.hashPassword("aliaalia".toCharArray()));
+            alia.setEmail("alia@gmail.com");
+            alia.setBirthdate(new Date(2000, 1, 25));
+            alia.setFullname("Миннегараева Алия Рустемовна");
+            userDao.addUser(alia);
+        }
 
-
-        User chulpan = new User();
-        chulpan.setUsername("chulpan");
-        chulpan.setPassword(passwordAuthentication.hashPassword("chulpan".toCharArray()));
-        chulpan.setEmail("chulpan@gmail.com");
-        chulpan.setBirthdate(new Date(2001, 1, 1));
-        chulpan.setFullname("Хайруллина  Чулпан Камилевна");
-
-        userDao.addUser(alia);
-        userDao.addUser(chulpan);
+        if (!userDao.isUsernameExist("chulpan")) {
+            User chulpan = new User();
+            chulpan.setUsername("chulpan");
+            chulpan.setPassword(passwordAuthentication.hashPassword("chulpanchulpan".toCharArray()));
+            chulpan.setEmail("chulpan@gmail.com");
+            chulpan.setBirthdate(new Date(2001, 9, 28));
+            chulpan.setFullname("Хайруллина Чулпан Камилевна");
+            userDao.addUser(chulpan);
+        }
 
         final ServletContext servletContext = sce.getServletContext();
 
