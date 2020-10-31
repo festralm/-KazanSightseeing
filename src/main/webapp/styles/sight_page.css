@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.menu {
+    height: 55px;
+}
+
+.sub_nav_main {
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.sub_nav {
+    font-family: 'Montserrat', sans-serif;
+    float: right;
+    text-align: right;
+    overflow: hidden;
+    padding: 16.8px 0 16.8px 0;
+}
+
+.sub_nav a {
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+h1 {
+    text-align: left;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+}
+
+.sub_nav_content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    font-weight: 300;
+    z-index: 1;
+    margin: 11px 20px 20px 20px;
+}
+
+.sub_nav_content a {
+    font-size: 15px;
+}
+
+.sub_nav:hover .sub_nav_content {
+    display: block;
+}
+
+.sub_nav:hover .sub_nav_main {
+    background-color: rgba(20, 145, 13, 0.7);
+    border-radius: 50px;
+}
+
+.sub_nav ul li {
+    float: right;
+    list-style-type: none;
+    padding: 10px 0 10px 0;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+.sub_nav ul li:hover {
+    background-color: rgba(20, 145, 13, 0.5);
+}
+
+.sub_nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.photo {
+    width: 240px;
+    height: 320px;
+    background: #d9d9d9;
+    float: left;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.sight {
+    margin-left: 60px;
+    margin-right: 60px;
+    align-items: center;
+}
+
+.info {
+    width: 80%;
+    margin: 40px;
+}
+
+
+/** {box-sizing:border-box}*/
+
+/*!* Slideshow container *!*/
+/*.slideshow-container {*/
+/*    max-width: 1000px;*/
+/*    position: relative;*/
+/*    margin: auto;*/
+/*}*/
+
+/*!* Hide the images by default *!*/
+/*.mySlides {*/
+/*    display: none;*/
+/*}*/
+
+/*!* Next & previous buttons *!*/
+/*.prev, .next {*/
+/*    cursor: pointer;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    width: auto;*/
+/*    margin-top: -22px;*/
+/*    padding: 16px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    font-size: 18px;*/
+/*    transition: 0.6s ease;*/
+/*    border-radius: 0 3px 3px 0;*/
+/*}*/
+
+/*!* Position the "next button" to the right *!*/
+/*.next {*/
+/*    right: 0;*/
+/*    border-radius: 3px 0 0 3px;*/
+/*}*/
+
+/*!* On hover, add a black background color with a little bit see-through *!*/
+/*.prev:hover, .next:hover {*/
+/*    background-color: rgba(0,0,0,0.8);*/
+/*}*/
+
+/*!* Caption text *!*/
+/*.text {*/
+/*    color: #f2f2f2;*/
+/*    font-size: 15px;*/
+/*    padding: 8px 12px;*/
+/*    position: absolute;*/
+/*    bottom: 8px;*/
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*}*/
+
+/*!* Number text (1/3 etc) *!*/
+/*.numbertext {*/
+/*    color: #f2f2f2;*/
+/*    font-size: 12px;*/
+/*    padding: 8px 12px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*}*/
+
+/*!* The dots/bullets/indicators *!*/
+/*.dot {*/
+/*    cursor: pointer;*/
+/*    height: 15px;*/
+/*    width: 15px;*/
+/*    margin: 0 2px;*/
+/*    background-color: #bbb;*/
+/*    border-radius: 50%;*/
+/*    display: inline-block;*/
+/*    transition: background-color 0.6s ease;*/
+/*}*/
+
+/*.active, .dot:hover {*/
+/*    background-color: #717171;*/
+/*}*/
+
+/*!* Fading animation *!*/
+/*.fade {*/
+/*    -webkit-animation-name: fade;*/
+/*    -webkit-animation-duration: 1.5s;*/
+/*    animation-name: fade;*/
+/*    animation-duration: 1.5s;*/
+/*}*/
+
+/*@-webkit-keyframes fade {*/
+/*    from {opacity: .4}*/
+/*    to {opacity: 1}*/
+/*}*/
+
+/*@keyframes fade {*/
+/*    from {opacity: .4}*/
+/*    to {opacity: 1}*/
+/*}*/
+
+
+/* Тут начинается наша карусель. Блок .carousel-wrapper спозиционирован относительно, абертки .carousel-item абсолютно.
+. */
+.carousel-wrapper {
+    position: relative;
+}
+
+/* Абсолютно спозиционированные блоки получают высоту и ширину от родителя.
+Мы сделали их прозрачными по умолчанию, и потом они будут плавно появляться по нажатию на ссылки .arrow-prevи .arrow-next. */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Заметили padding слева и справа по 50px? Таким способом мы можем позиционировать наши ссылки! Каждая будет по 50px шириной. Кроме того, я использую пустые ссылки с фоновым рисунком таким образом, что ссылки выглядят как стрелки. Проверьте, поменяли ли вы URL ссылок с оригинальным URL, чтобы ваши ссылки не были просто прозрачными прямоугольниками. */
+.arrow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 50px;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: url("/computer-icons-arrow-download-arrow.jpg") 50% 50%/20px no-repeat;
+}
+
+/* Давайте вернем нашу стрелку налево. */
+.arrow-prev {
+    left: 0;
+}
+
+/* А вторую направо. Поскольку я использую одно и то же изображение для стрелки, я поворачиваю его на 180 градусов. */
+.arrow-next {
+    right: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+/* Мне очень нравится, как слайды карусели смотрятся на темном фоне, и если блок .carousel-itemимеет класс 'light',
+мы изменим его текст на белый и используем белые стрелки вместо серых. Проверьте еще раз, правильно ли указан путь к изображению стрелки */
+.light {
+    color: white;
+}
+
+.arrow {
+    background: url("/photo_2020-06-28_08-39-17.jpg") 50% 50%/20px no-repeat;
+}
+
+/* Напишем медиа-запрос для изменения размера стрелок на устройствах с меньшим размером экрана.*/
+
+@media (max-width: 480px) {
+    .arrow, .light.arrow {
+        background-size: 10px;
+        background-position: 10px 50%;
+    }
+}
+
+
+/* Установим целям для ссылок значение display: none; Таким образом, мы избавляемся от постоянного перепрыгивания браузера в самый верх карусели при каждом нажатии на стрелки. Это свойство действует для любых элементов, чей идентификатор начинается на 'target-item'. */
+[id^="target-item"] {
+    display: none;
+}
+
+/* Выше мы сделали все наши слайды карусели прозрачными, а это значит, что во время загрузки карусели мы будем получать вместо нее большое пустое поле.
+Изменим значение прозрачности для первого слайда на 1 для отображения. Так же устанавливаем z-index значение 2, позиционируя его выше остальных слайдов. */
+.item-1 {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* Но нам не нужно, чтобы первый слайд всегда имел значение прозрачностиopacity: 1; в противном случае нам придется пробираться через этот слайд, во время ротации остальных. */
+*:target ~ .item-1 {
+    opacity: 0;
+}
+
+/* ..но если #target-item-1 в фокусе, и мы хотим показать первый слайд, тогда выбираем его с помощью значка ~ и устанавливаем прозрачность опять в 1:-) */
+#target-item-1:target ~ .item-1 {
+    opacity: 1;
+}
+
+/* Если другие target-item-# в фокусе, выбираем их используя ~ селектор, плавно показываем, и размещаем их сверху с помощьюz-index: 3.
+Тут вы можете добавить дополнительные spanс идентификатором target-item, если их у вас будет больше трех. Может сразу и добавить 10 штук.. */
+#target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+}
+
+
+#b1, #b2, input[type="submit"] {
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    border: none; /* Убираем рамку */
+    background-color: #67C03C;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 10px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+#allComments {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: black;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    text-align: left;
+    padding-bottom: 15px;
+    margin-top: 40px;
+}
+
+#allComments:hover {
+    text-decoration: #67C03C underline;
+    color: black;
+    font-weight: bold;
+}
+
+.other {
+    margin-left: 80px;
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#comment {
+    height: 150px;
+    width: 60%;
+    border: 1px solid black;
+    color: white;
+}
+
+.buttons {
+    margin-left: 80px;
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#b3 {
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    border: 1.5px solid #67C03C;
+    background: white;
+    border-radius: 8px;
+    color: #f8b800;
+    font-size: 16px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 10px;
+    margin-top: 30px;
+    align-items: center;
+}

@@ -1,27 +1,36 @@
-.menu {
-    height: 61.6px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.menu {
+    height: 55px;
+}
+.sub_nav_main {
+    font-family: 'Montserrat', sans-serif;;
+}
 .sub_nav {
+    font-family: 'Montserrat', sans-serif;
     float: right;
     text-align: right;
     overflow: hidden;
     padding: 16.8px 0 16.8px 0;
 }
 .sub_nav a {
-    font-family: 'Comfortaa', cursive;
     font-weight: 300;
     font-size: 20px;
     text-decoration: none;
     color: black;
     padding: 10px;
 }
-.sub_nav_main:hover {
-    color: white;
-    text-align: right;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
- }
+
+h3{
+    text-align: center;
+    text-decoration: #67C03C underline;
+    font-size: 32px;
+}
+
+.area2 {
+    height: 400vh;
+}
+
 .sub_nav_content {
     display: none;
     position: absolute;
@@ -66,13 +75,79 @@ progress[value] {
 
     width: 80%;
     height: 30px;
+    margin: 20px 5px;
 }
 progress[value]::-webkit-progress-bar {
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 30px;
+    border-radius: 22px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    border: solid 2px #67C03C ;
 }
 progress[value]::-webkit-progress-value {
     border-radius: 30px;
-    background-color: rgba(255, 165, 0, 0.7);
+    background: linear-gradient(140deg, #FCC60A, #FEEA36, #FFF27F);
 }
+
+
+
+.map {
+    position: relative;
+    float: left;
+    margin: 30px 50px;
+}
+
+svg {
+    position: absolute;
+    /*top: 0;*/
+    /*left: 0;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+}
+
+.part {
+    opacity: 0.3;
+}
+
+.part:hover {
+    transition: opacity 0.2s ease;
+    fill: #67C03C;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 0 32px 10px #d9d9d9;
+    left: 900px;
+    bottom: calc(50% - 100px);
+}
+
+.description img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #D6E4CF; /* Цвет фона */
+    color: #A7A7A7; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+    height: 60px;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.info {
+    height: 1000px;
+}
+
+

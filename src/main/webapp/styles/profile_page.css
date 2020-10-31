@@ -63,8 +63,6 @@ footer {
 
 .avatar {
     height: 220px;
-    float: left;
-    margin: 40px 120px;
 }
 
 input {
@@ -162,3 +160,21 @@ nav {
     text-align: center;
 }
 
+.ph {
+    float: left;
+    margin: 40px 120px;
+    text-align: center;
+}
+
+a.rimg {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    background-image: linear-gradient(#48E000, #00C797);
+    margin-left: 10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: table;
+    text-decoration: none;
+    text-align: center;
+}
