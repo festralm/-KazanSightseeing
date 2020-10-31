@@ -16,24 +16,13 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" type="text/css" href="styles/authorisation_menu.css">
 </head>
 <body>
-<header>
-    <menu class="menu" role="menu" id="menu">
-        <div class="page_name" id="page_name">
-            <a href="home_page.jsp">Kazan <span class="colortext">Sightseeing</span></a>
-        </div>
-        <div class="authorization" id="authorization">
-            <div class="register" id="register">
-                <a href="registration_page.jsp">Зарегистрироваться</a>
-            </div>
-        </div>
-    </menu>
-</header>
+<jsp:include page="includes/register_in.jsp"/>
 <div class="form" id="form">
     <div class="image">
     </div>
 
     <div class="authorization_form">
-        <form method="post" action="">
+        <form method="post" action="login">
             <h1>Вход</h1>
             <div>
                 <input type="text" name="username" id="username" placeholder=" " required/>
@@ -45,7 +34,15 @@ To change this template use File | Settings | File Templates.
                 <input type="password" name="password" id="password" placeholder=" " minlength="8" maxlength="32" required/>
                 <label for="password">Введите пароль</label>
 
-                <div class="requirements">
+                <div class="requirements"style="max-height: <%
+                Object passwordIsTrue = request.getSession().getAttribute("check_password");
+                    if (passwordIsTrue != null) {
+                        out.print("200px");
+                    } else {
+                        out.print("0");
+                    }
+                request.getSession().setAttribute("check_password", null);
+                 %>">
                     Пароль неверный
                 </div>
             </div>
@@ -60,7 +57,7 @@ To change this template use File | Settings | File Templates.
             </p>
 
 
-            <a class="registration" id="registration" href="registration_page.jsp">Ещё не зарегистрированы?</a>
+            <a class="registration" id="registration" href="http://localhost:8080/ks/register">Ещё не зарегистрированы?</a>
 
 
         </form>

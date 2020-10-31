@@ -17,29 +17,18 @@ To change this template use File | Settings | File Templates.
 
 </head>
 <body>
-<header>
-    <menu class="menu" role="menu" id="menu">
-        <div class="page_name" id="page_name">
-            <a href="home_page.jsp">Kazan <span class="colortext">Sightseeing</span></a>
-        </div>
-        <div class="authorization" id="authorization">
-            <div class="sign_in" id="sign_in">
-                <a href="sign_in_page.jsp">Войти</a>
-            </div>
-        </div>
-    </menu>
-</header>
+<jsp:include page="includes/sign_in.jsp"/>
 
 <div class="form">
     <div class="image">
     </div>
 
     <div class="authorization_form">
-        <form method="post" action="">
+        <form method="post" action="register-in">
             <h1>Регистрация</h1>
             <div>
                 <input type="text" name="username" id="username" placeholder=" " required/>
-                <label for="username">Имя и фамилия</label>
+                <label for="username">Имя пользователя</label>
             </div>
 
             <div>
@@ -52,7 +41,8 @@ To change this template use File | Settings | File Templates.
             </div>
 
             <div>
-                <input type="password" name="password" id="password" placeholder=" " minlength="8" maxlength="32"
+                <input type="password" name="password" id="password" placeholder=" "
+                       minlength="8" maxlength="32"
                        required/>
                 <label for="password">Введите пароль</label>
 
@@ -73,13 +63,12 @@ To change this template use File | Settings | File Templates.
             </div>
 
             <p>
-                <label><input type="checkbox" name="remember_me">Запомнить меня</label>
+                <label><input class="check" type="checkbox" name="remember_me">Запомнить меня</label>
             </p>
 
             <p>
                 <input class="button" type="submit" name="submit" id="submit" value="Г О Т О В О !"/>
             </p>
-
         </form>
     </div>
 </div>

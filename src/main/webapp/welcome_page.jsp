@@ -20,18 +20,7 @@ To change this template use File | Settings | File Templates.
     <script src="main.js"></script>
 </head>
 <body>
-<header>
-    <menu class="menu" role="menu" id="menu">
-        <div class="page_name" id="page_name">
-            <a href="home_page.jsp">Kazan <span class="colortext">Sightseeing</span></a>
-        </div>
-        <div class="authorization" id="authorization">
-            <div class="sign_in" id="sign_in">
-                <a href="sign_in_page.jsp">Войти</a>
-            </div>
-        </div>
-    </menu>
-</header>
+<jsp:include page="includes/sign_in.jsp"/>
 
 <div class="area1" id="area1">
     <!--    <h1>1005 ЛЕТ И ВСЕ ДЛЯ ТЕБЯ</h1>-->

@@ -40,24 +40,26 @@ To change this template use File | Settings | File Templates.
 
     <div class="area1" id="area1">
         <div class="box">
+            <form action="edit_profile" method="post">
             <h2>Имя и фамилия:</h2>
-            <input type="text" class="input" value="Абрамский Михаил">
+            <input name="fullname" type="text" class="input" value="${fullname}">
 
             <h2>Имя пользователя: </h2>
-            <input type="text" class="input" value="@abramichael">
+            <input name="username" type="text" class="input" value="${username}">
 
             <h2>E-mail:</h2>
-            <input type="text" class="input" value="itis.example@gmail.com">
+            <input name="email" type="text" class="input" value="${email}">
 
             <h2>Дата рождения:</h2>
-            <input type="text" class="input" value="31 Авг 19**">
+            <input name="birthdate" type="text" class="input" value="${birthdate}">
 
             <h2>Пароль</h2>
-            <input type="password" class="input" value="iloveuitis">
+            <input name="password" type="password" class="input" value="********">
 
             <div class="button">
                 <button class="btn">Сохранить</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
