@@ -19,7 +19,7 @@ public class AuthorizeServlet extends HttpServlet {
         if (CheckSession.check(request.getSession(), request)) {
             response.sendRedirect(request.getContextPath());
         } else {
-            String path = "/sign_in_page.html";
+            String path = "/sign_in_page.jsp";
             ServletContext servletContext = getServletContext();
             RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
             requestDispatcher.forward(request, response);

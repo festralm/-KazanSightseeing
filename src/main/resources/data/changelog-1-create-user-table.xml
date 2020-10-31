@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet author="chulpan" id="1">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="INT">
+            <constraints nullable="false" primaryKey="true" unique="true"/>
+        </column>
+            <column name="username" type="varchar(32)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="birthdate" type="date" defaultValue="null"/>
+            <column name="fullname" type="varchar(150)" defaultValue="null"/>
+            <column name="photo_path" type="varchar(255)"/>
+            <column name="rating" type="decimal(3,2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="chulpan">
+        <insert tableName="user">
+            <column name="username" value="alia"/>
+            <column name="password" value="$31$15$jCQe1H5IHoLZ6zN5uE2POQFJrO__Hhg7A8HONSsvZ_w "/>
+            <column name="email" value="alia@mail.ru"/>
+            <column name="fullname" value="Алия Миннегараева"/>
+        </insert>
+        <insert tableName="user">
+            <column name="username" value="chulpan"/>
+            <column name="password" value="$31$15$jCQe1H5IHoLZ6zN5uE2POQXHzbge5XlmTDvuhiHWlI8"/>
+            <column name="email" value="chulpan@gmail.com"/>
+            <column name="fullname" value="Чулпан"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

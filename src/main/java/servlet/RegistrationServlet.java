@@ -1,37 +1,31 @@
-package filter;
+package servlet;
 
 import dao.UserDao;
-import useful.CheckSession;
 import dto.User;
+import useful.CheckSession;
 import useful.LogIn;
 import useful.PasswordAuthentication;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.logging.Logger;
 
-@WebFilter(filterName = "RegistrationFilter")
-public class RegistrationFilter implements Filter {
-    @Override
-    public void doFilter(final ServletRequest req,
-                         final ServletResponse resp,
-                         final FilterChain filterChain)
-            throws IOException, ServletException {
+@WebServlet("/registerin")
+public class RegistrationServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        final HttpServletRequest request = (HttpServletRequest) req;
-        final HttpServletResponse response = (HttpServletResponse) resp;
-
-        final String username = req.getParameter("username");
-        final char[] password1 = req.getParameter("password").toCharArray();
-        final char[] password2 = req.getParameter("repeat_password").toCharArray();
-        final String email = req.getParameter("email");
+        final String username = request.getParameter("username");
+        final char[] password1 = request.getParameter("password").toCharArray();
+        final char[] password2 = request.getParameter("repeat_password").toCharArray();
+        final String email = request.getParameter("email");
 
         if (!Arrays.equals(password1, password2)) {
+            request.getSession().setAttribute("passwords", false);
             response.sendRedirect("register");
         } else {
             final UserDao dao = (UserDao) request.getServletContext().getAttribute("userDao");
@@ -46,7 +40,7 @@ public class RegistrationFilter implements Filter {
                     PasswordAuthentication passwordAuthentication = new PasswordAuthentication(cost);
                     String passwordHash = passwordAuthentication.hashPassword(password1);
                     dao.addUser(new User(username, passwordHash, email));
-                    LogIn.logIn(username, passwordHash, req, resp, request, response);
+                    LogIn.logIn(username, passwordHash, request, response);
                 } else {
                     request.getSession().setAttribute("check_login", false);
                     response.sendRedirect("register");
@@ -56,11 +50,7 @@ public class RegistrationFilter implements Filter {
         }
     }
 
-    @Override
-    public void destroy() {
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
     }
 }

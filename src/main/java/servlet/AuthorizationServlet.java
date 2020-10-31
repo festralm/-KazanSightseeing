@@ -1,35 +1,29 @@
-package filter;
+package servlet;
 
-import dao.*;
+import dao.UserDao;
 import dto.User;
 import useful.CheckSession;
 import useful.LogIn;
 import useful.PasswordAuthentication;
 
-import javax.servlet.*;
-import javax.servlet.annotation.*;
-import javax.servlet.http.*;
-import java.io.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
-@WebFilter(filterName = "AuthorizationFilter")
-public class AuthorizationFilter implements Filter {
-    @Override
-    public void doFilter(final ServletRequest req,
-                         final ServletResponse resp,
-                         final FilterChain filterChain)
-
-            throws IOException, ServletException {
-
-        final HttpServletRequest request = (HttpServletRequest) req;
-        final HttpServletResponse response = (HttpServletResponse) resp;
+@WebServlet("/login")
+public class AuthorizationServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final HttpSession session = request.getSession();
-
         if (CheckSession.check(session, request)) {
             //response.sendRedirect(request.getContextPath());
             response.sendRedirect("/ks/");
         } else {
-            final String username = req.getParameter("username");
-            final char[] password = req.getParameter("password").toCharArray();
+            final String username = request.getParameter("username");
+            final char[] password = request.getParameter("password").toCharArray();
 
             final UserDao userDao = (UserDao) request.getServletContext().getAttribute("userDao");
             final int cost = (int) request.getServletContext().getAttribute("cost");
@@ -38,7 +32,7 @@ public class AuthorizationFilter implements Filter {
             PasswordAuthentication passwordAuthentication = new PasswordAuthentication(cost);
 
             if (user != null && passwordAuthentication.authenticate(password, user.getPassword())) {
-                LogIn.logIn(username, user.getPassword(), req, resp, request, response);
+                LogIn.logIn(username, user.getPassword(), request, response);
             } else {
                 request.getSession().setAttribute("check_password", false);
                 response.sendRedirect("authorize");
@@ -47,11 +41,7 @@ public class AuthorizationFilter implements Filter {
         }
     }
 
-    @Override
-    public void destroy() {
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
     }
 }

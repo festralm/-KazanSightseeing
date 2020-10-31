@@ -17,7 +17,6 @@ public final class PasswordAuthentication
     public static final int DEFAULT_COST = 16;
     private static final String ALGORITHM = "PBKDF2WithHmacSHA1";
     private static final int SIZE = 128;
-    private static final Pattern layout = Pattern.compile("\\$31\\$(\\d\\d?)\\$(.{43})");
     private final SecureRandom random;
     private final int cost;
     private static final byte[] salt = new byte[] {-116, 36, 30, -44, 126, 72, 30, -126,
@@ -54,17 +53,8 @@ public final class PasswordAuthentication
 
     public boolean authenticate(char[] password, String token)
     {
-        Matcher m = layout.matcher(token);
-        if (!m.matches())
-            throw new IllegalArgumentException("Invalid token format");
-        int iterations = iterations(Integer.parseInt(m.group(1)));
-        byte[] hash = Base64.getUrlDecoder().decode(m.group(2));
-        byte[] salt = Arrays.copyOfRange(hash, 0, SIZE / 8);
-        byte[] check = pbkdf2(password, salt, iterations);
-        int zero = 0;
-        for (int idx = 0; idx < check.length; ++idx)
-            zero |= hash[salt.length + idx] ^ check[idx];
-        return zero == 0;
+        String passwordToken = hashPassword(password);
+        return passwordToken.equals(token);
     }
 
     private static byte[] pbkdf2(char[] password, byte[] salt, int iterations)

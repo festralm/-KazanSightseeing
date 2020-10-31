@@ -25,8 +25,6 @@ public class ProfileServlet extends HttpServlet {
         final HttpSession session = request.getSession();
         ServletContext servletContext = getServletContext();
         if (CheckSession.check(session, request)) {
-            servletContext.getRequestDispatcher("/profile_page.html").forward(request, response);
-
             final UserDao userDao = (UserDao) request.getServletContext().getAttribute("userDao");
 
             String username = (String) session.getAttribute("username");
@@ -36,10 +34,9 @@ public class ProfileServlet extends HttpServlet {
             request.setAttribute("fullname", user.getFullname());
             request.setAttribute("username", username);
             request.setAttribute("email", user.getEmail());
-            request.setAttribute("birthdate", user.getBirthdate());
-            request.setAttribute("password", user.getPassword());
+            request.setAttribute("birthdate", user.getBirthdate() == null ? "" : user.getBirthdate().toString());
 
-            request.getRequestDispatcher("").forward(request, response);
+            request.getRequestDispatcher("/profile_page.jsp").forward(request, response);
 
         } else {
             response.sendRedirect("/authorize");
