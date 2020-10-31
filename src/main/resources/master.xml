@@ -15,4 +15,5 @@
     <include file="data/changelog-5-create-user-sight-visited-table.xml" relativeToChangelogFile="true"/>
     <include file="data/changelog-6-create-user-sight-favorite-table.xml" relativeToChangelogFile="true"/>
     <include file="data/changelog-7-create-user-sight-wanted-table.xml" relativeToChangelogFile="true"/>
+    <include file="data/TEMP-changelog-8-insert-to-achievement-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

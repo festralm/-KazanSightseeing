@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="1" author="chulpan">
+        <insert tableName="achievement">
+            <column name="name" value="Турист"/>
+            <column name="photo_path" value="/photo/achievements/1.jpg"/>
+            <column name="description" value="ТуристТуристТурист"/>
+        </insert>
+        <insert tableName="achievement">
+            <column name="name" value="Коренной житель"/>
+            <column name="photo_path" value="/photo/achievements/2.jpg"/>
+            <column name="description" value="Коренной жительКоренной жительКоренной жительКоренной житель"/>
+        </insert>
+        <insert tableName="achievement">
+            <column name="name" value="Колумб"/>
+            <column name="photo_path" value="/photo/achievements/3.jpg"/>
+            <column name="description" value="КолумбКолумбКолумбКолумб"/>
+        </insert>
+        <insert tableName="achievement">
+            <column name="name" value="От края до края"/>
+            <column name="photo_path" value="/photo/achievements/4.jpg"/>
+            <column name="description" value="От края до краяОт края до краяОт края до края"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

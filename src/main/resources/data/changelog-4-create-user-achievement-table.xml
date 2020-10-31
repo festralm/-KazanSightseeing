@@ -33,7 +33,7 @@
                 baseTableName="user_achievement"
                 baseColumnNames="achievement_id"
                 constraintName="user_achievement-fk2-achievement_id"
-                referencedTableName="achievement_id"
+                referencedTableName="achievement"
                 referencedColumnNames="id"/>
     </changeSet>
 </databaseChangeLog>

@@ -30,7 +30,7 @@
     <changeSet id="2" author="chulpan">
         <insert tableName="user">
             <column name="username" value="alia"/>
-            <column name="password" value="$31$15$jCQe1H5IHoLZ6zN5uE2POQFJrO__Hhg7A8HONSsvZ_w "/>
+            <column name="password" value="$31$15$jCQe1H5IHoLZ6zN5uE2POQFJrO__Hhg7A8HONSsvZ_w"/>
             <column name="email" value="alia@mail.ru"/>
             <column name="fullname" value="Алия Миннегараева"/>
         </insert>
