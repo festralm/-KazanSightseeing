@@ -16,7 +16,7 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
 </head>
 <body>
-<jsp:include page="includes/header.jsp"/>
+<jsp:include page="includes/authorized_menu.jsp"/>
 
 <div class="achieve" id="achieve">
     <div class="a" id="a1">

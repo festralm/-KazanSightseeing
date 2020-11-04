@@ -1,33 +1,35 @@
-<%--
-Created by IntelliJ IDEA.
-User: katty
-Date: 31.10.2020
-Time: 7:43
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Достопримечательность</title>
 
-    <link rel="stylesheet" type="text/css" href="styles/sight_page.css">
-    <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
+    <link rel="stylesheet" type="text/css" href="../styles/sight_page.css">
+    <link rel="stylesheet" type="text/css" href="../styles/common_ks.css">
 <!--    <link rel="stylesheet" href="photos.js">-->
-    <script src="photos.js"></script>
+    <script src="../photos.js"></script>
 </head>
 <body>
-<%
-    Object user = session.getAttribute("user_id");
-
-    if (user != null) {
-        out.print("<jsp:include page=\"includes/authorized_menu.jsp\"/>");
-    } else {
-        out.print("<jsp:include page=\"includes/non_authorized_menu.jsp\"/>");
-    }
-%>
-
+<header>
+    <menu class="menu" role="menu" id="menu">
+        <div class="page_name" id="page_name">
+            <a href="http://localhost:8080/ks">Kazan <span class="colortext">Sightseeing</span></a>
+        </div>
+        <div class="sub_nav">
+            <a href="http://localhost:8080/ks/profile" class="sub_nav_main">Профиль</a>
+            <div class="sub_nav_content">
+                <ul>
+                    <li><a href="http://localhost:8080/ks/achievements" id="my_archives">Мои достижения</a></li>
+                    <li><a href="http://localhost:8080/ks/rating" id="my_rating">Мой рейтинг</a></li>
+                    <li><a href="http://localhost:8080/ks/visited" id="visited">Посещенные</a></li>
+                    <li><a href="http://localhost:8080/ks/favorites" id="highlighted">Любимые места</a></li>
+                    <li><a href="http://localhost:8080/ks/wanted" id="will_visit">Желаю посетить</a></li>
+                    <li><a href="http://localhost:8080/ks/logout" id="log_out">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+    </menu>
+</header>
 <div class="sight" id="sight">
     <h1>Название достопримечательности</h1>
 
@@ -54,40 +56,40 @@ To change this template use File | Settings | File Templates.
     </div>
 </div>
 
-<!--&lt;!&ndash; Slideshow container &ndash;&gt;-->
-<!--<div class="slideshow-container">-->
+<!-- Slideshow container -->
+<div class="slideshow-container">
 
-<!--    &lt;!&ndash; Full-width images with number and caption text &ndash;&gt;-->
-<!--    <div class="mySlides fade">-->
-<!--        <div class="numbertext">1 / 3</div>-->
-<!--        <img src="/photo_2020-06-08_09-28-15.jpg" style="width:100%">-->
-<!--        <div class="text">Caption Text</div>-->
-<!--    </div>-->
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="../photo/sight/1.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
 
-<!--    <div class="mySlides fade">-->
-<!--        <div class="numbertext">2 / 3</div>-->
-<!--        <img src="/photo_2020-06-28_08-39-17.jpg" style="width:100%">-->
-<!--        <div class="text">Caption Two</div>-->
-<!--    </div>-->
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="../photo/sight/2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
 
-<!--    <div class="mySlides fade">-->
-<!--        <div class="numbertext">3 / 3</div>-->
-<!--        <img src="/photo_2020-07-05_08-23-54.jpg" style="width:100%">-->
-<!--        <div class="text">Caption Three</div>-->
-<!--    </div>-->
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="../photo/sight/3.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
 
-<!--    &lt;!&ndash; Next and previous buttons &ndash;&gt;-->
-<!--    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
-<!--    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-<!--</div>-->
-<!--<br>-->
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
 
-<!--&lt;!&ndash; The dots/circles &ndash;&gt;-->
-<!--<div style="text-align:center">-->
-<!--    <span class="dot" onclick="currentSlide(1)"></span>-->
-<!--    <span class="dot" onclick="currentSlide(2)"></span>-->
-<!--    <span class="dot" onclick="currentSlide(3)"></span>-->
-<!--</div>-->
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
 <!--Here's our main wrapper.
 Since our carousel items get their size from their parent,
@@ -146,6 +148,9 @@ we have to specify its height.-->
 
     <a href="http://localhost:8080/ks/comments" id="allComments">Посмотреть другие комментарии</a>
 </div>
-<jsp:include page="includes/footer.jsp"/>
+<footer>
+    <p>Мы всегда готовы Вам помочь!</p>
+    <p>По всем вопросам пишите на почту: email.example@gmail.com</p>
+</footer>
 </body>
 </html>

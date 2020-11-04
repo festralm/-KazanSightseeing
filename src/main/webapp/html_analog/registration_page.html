@@ -1,24 +1,26 @@
-<%--
-Created by IntelliJ IDEA.
-User: katty
-Date: 31.10.2020
-Time: 7:43
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" type="text/css" href="styles/registration_page.css">
-    <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
-    <link rel="stylesheet" type="text/css" href="styles/authorisation_menu.css">
+    <link rel="stylesheet" type="text/css" href="../styles/registration_page.css">
+    <link rel="stylesheet" type="text/css" href="../styles/common_ks.css">
+    <link rel="stylesheet" type="text/css" href="../styles/authorisation_menu.css">
 
 </head>
 <body>
-<jsp:include page="includes/non_authorized_menu.jsp"/>
-
+<header>
+    <menu class="menu" role="menu" id="menu">
+        <div class="page_name" id="page_name">
+            <a href="http://localhost:8080/ks">Kazan <span class="colortext">Sightseeing</span></a>
+        </div>
+        <div class="authorization" id="authorization">
+            <div class="sign_in" id="sign_in">
+                <a href="http://localhost:8080/ks/authorize">Войти</a>
+            </div>
+        </div>
+    </menu>
+</header>
 <div class="form">
     <div class="image">
     </div>
@@ -29,13 +31,16 @@ To change this template use File | Settings | File Templates.
             <div>
                 <input type="text" name="username" id="username" placeholder=" " required/>
                 <label for="username">Имя пользователя</label>
+                <div class="requirements" style="max-height: 200px">
+                    Имя пользвотеля занято
+                </div>
             </div>
 
             <div>
                 <input type="email" name="email" id="email" placeholder=" " required/>
                 <label for="email">E-mail</label>
 
-                <div class="requirements">
+                <div class="requirements" style="max-height: 200px">
                     E-mail введён некорректно
                 </div>
             </div>
@@ -46,18 +51,16 @@ To change this template use File | Settings | File Templates.
                        required/>
                 <label for="password">Введите пароль</label>
 
-                <div class="requirements">
+                <div class="requirements" style="max-height: 200px">
                     Пароль должен содержать не менее 8 знаков
                 </div>
             </div>
 
             <div>
-                <input type="password" name="repeat_password" id="repeat_password" placeholder=" " minlength="8"
-                       maxlength="32"
-                       required/>
+                <input type="password" name="repeat_password" id="repeat_password" placeholder=" " required/>
                 <label for="repeat_password">Повторите пароль</label>
 
-                <div class="requirements">
+                <div class="requirements" style="max-height: 200px">
                     Введённые пароли не совпадают
                 </div>
             </div>
@@ -72,8 +75,9 @@ To change this template use File | Settings | File Templates.
         </form>
     </div>
 </div>
-
-<jsp:include page="includes/footer.jsp"/>
-
+<footer>
+    <p>Мы всегда готовы Вам помочь!</p>
+    <p>По всем вопросам пишите на почту: email.example@gmail.com</p>
+</footer>
 </body>
 </html>
