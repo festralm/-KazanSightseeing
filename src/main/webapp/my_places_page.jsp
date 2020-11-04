@@ -23,7 +23,7 @@ To change this template use File | Settings | File Templates.
 
     <div class="f1" id="f1">
         <div class="ph" id="ph1"></div>
-        <a href="sight_page.jsp">. . . </a>
+        <a href="http://localhost:8080/ks/sight?id=1">. . . </a>
     </div>
 </div>
 
