@@ -17,7 +17,7 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" type="text/css" href="styles/welcome_page.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <jsp:include page="includes/non_authorized_menu.jsp"/>

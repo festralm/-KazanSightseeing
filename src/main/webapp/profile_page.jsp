@@ -28,7 +28,7 @@ To change this template use File | Settings | File Templates.
 <div class="all" id="all">
     <div class="ph" id="ph">
         <div class="photo" id="photo">
-            <img src="https://sun9-57.userapi.com/gM6I4GcHzmNQX1IjvJcPgTxAQPvR8c2ZSFAm9A/ps9TYGpIuQk.jpg" alt="Avatar"
+            <img src="${photo_path}" alt="Avatar"
                  class="avatar">
         </div>
 

@@ -16,14 +16,14 @@
     <link rel="stylesheet" type="text/css" href="styles/welcome_page.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 
 <jsp:include page="includes/authorized_menu.jsp"/>
 
 <div class="info" id="info">
-    <progress max="100" value="25">
+    <progress max="100" value="${rating}">
         <span id="value"></span>%
     </progress>
 

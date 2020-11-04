@@ -14,6 +14,7 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" type="text/css" href="styles/registration_page.css">
     <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
     <link rel="stylesheet" type="text/css" href="styles/authorisation_menu.css">
+    <script src="js/validation.js"></script>
 
 </head>
 <body>
@@ -27,8 +28,13 @@ To change this template use File | Settings | File Templates.
         <form method="post" action="register-in">
             <h1>Регистрация</h1>
             <div>
-                <input type="text" name="username" id="username" placeholder=" " required/>
+                <input type="text" name="username" id="username"
+                       placeholder=" " required onblur="check_username()"/>
                 <label for="username">Имя пользователя</label>
+
+                <div class="requirements" id="username_error">
+                    Имя пользователя занято
+                </div>
             </div>
 
             <div>
@@ -42,7 +48,7 @@ To change this template use File | Settings | File Templates.
 
             <div>
                 <input type="password" name="password" id="password" placeholder=" "
-                       minlength="8" maxlength="32"
+                       minlength="8" maxlength="32" onblur="check_passwords()"
                        required/>
                 <label for="password">Введите пароль</label>
 
@@ -52,12 +58,11 @@ To change this template use File | Settings | File Templates.
             </div>
 
             <div>
-                <input type="password" name="repeat_password" id="repeat_password" placeholder=" " minlength="8"
-                       maxlength="32"
-                       required/>
+                <input type="password" name="repeat_password" id="repeat_password"
+                       placeholder=" " required onblur="check_passwords()"/>
                 <label for="repeat_password">Повторите пароль</label>
 
-                <div class="requirements">
+                <div class="requirements" id="passwords_error">
                     Введённые пароли не совпадают
                 </div>
             </div>
@@ -67,7 +72,7 @@ To change this template use File | Settings | File Templates.
             </p>
 
             <p>
-                <input class="button" type="submit" name="submit" id="submit" value="Г О Т О В О !"/>
+                <input class="button" type="submit" name="submit" id="submit" value="Г О Т О В О !" disabled/>
             </p>
         </form>
     </div>

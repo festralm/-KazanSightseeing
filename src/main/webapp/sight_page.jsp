@@ -14,43 +14,32 @@ To change this template use File | Settings | File Templates.
 
     <link rel="stylesheet" type="text/css" href="styles/sight_page.css">
     <link rel="stylesheet" type="text/css" href="styles/common_ks.css">
-<!--    <link rel="stylesheet" href="photos.js">-->
-    <script src="photos.js"></script>
+    <script src="js/photos.js"></script>
 </head>
 <body>
 <%
     Object user = session.getAttribute("user_id");
 
+    String path;
+
     if (user != null) {
-        out.print("<jsp:include page=\"includes/authorized_menu.jsp\"/>");
+        path = "includes/authorized_menu.jsp";
     } else {
-        out.print("<jsp:include page=\"includes/non_authorized_menu.jsp\"/>");
+        path = "includes/non_authorized_menu.jsp";
     }
+
 %>
+<jsp:include page="<%=path%>"/>;
 
 <div class="sight" id="sight">
-    <h1>Название достопримечательности</h1>
+    <h1>${sight.getName()}</h1>
 
-    <div class="photo" id="photo"></div>
+    <div class="photo" id="photo">
+        <img class="photo" src="${sight.getPhotoPath()}"/>
+    </div>
 
     <div class="info" id="info">
-        <p>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-        </p>
-
-        <p>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-            *интересная информация о достопримечательности*<br>
-        </p>
+        <p>${sight.getDescription()}</p>
     </div>
 </div>
 
@@ -104,19 +93,10 @@ we have to specify its height.-->
     and an item-# class, which we use to control its opacity
     depending on which target-item-# is currently targeted-->
     <div class="carousel-item item-1">
-        <!--We can add any content in here, just make sure that
-        your .carousel-wrapper is big enough to hold all the content.-->
-        <img src="https://sun9-11.userapi.com/jl_0F4HP2DzRUsA92VKIuELlSWwyFPAceQzrIg/z11rZvdK8_Y.jpg" height="380px" width="500px">
-        <!--Here are the links that control the carousel! Make sure
-        the href of each one is pointing to the right target-item-#
-        so that the carousel cycles in sequence.-->
+        <img src="" height="380px" width="500px">
         <a class="arrow arrow-prev" href="#target-item-3"></a>
         <a class="arrow arrow-next" href="#target-item-2"></a>
     </div>
-    <!--And here are a couple more carousel items so that
-    we have some content to scroll to. Notice the 'light' class?
-    Royal blue is a pretty dark background color, so we'll add a CSS
-    rule to make the text white if a carousel item has this class-->
     <div class="carousel-item item-2 light" style="background-color: royalblue;">
         <img src="https://sun9-62.userapi.com/vQIKd3MlALvao-IJkQ5BQD2PrTOm-OhFsSi8Qg/7_FWWYiPPss.jpg" height="380px" width="500px">
         <a class="arrow arrow-prev" href="#target-item-1"></a>
@@ -130,13 +110,13 @@ we have to specify its height.-->
 </div>
 
 <div class="buttons" id="buttons">
-    <input type="button" id="b1" value="Отметить как пройденное" onclick="window.location.href = '/ks/save-as-visited';">
-    <input type="button" id="b2" value="Хочу посетить!" onclick="window.location.href = '/ks/save-as-wanted';"><br>
-    <input type="button" id="b3" value="✩ Избранное" onclick="window.location.href = '/ks/save-as-favorite';">
+    <input type="button" id="b1" value="Отметить как пройденное" onclick="window.location.href = '/ks/save-as-visited?id=${sight.getId()}';">
+    <input type="button" id="b2" value="Хочу посетить!" onclick="window.location.href = '/ks/save-as-wanted?id=${sight.getId()}';"><br>
+    <input type="button" id="b3" value="✩ Избранное" onclick="window.location.href = '/ks/save-as-favorite?id=${sight.getId()}';">
 </div>
 
 <div class="other" id="other">
-    <form method="post" action="comment">
+    <form method="post" action="comment?id=${sight.getId()}">
         <p><b>Поделиться впечатлениями :</b></p>
 
         <p><textarea name="comment" id="comment"></textarea></p>
@@ -144,7 +124,7 @@ we have to specify its height.-->
     </form>
 
 
-    <a href="http://localhost:8080/ks/comments" id="allComments">Посмотреть другие комментарии</a>
+    <a href="http://localhost:8080/ks/comments?id=${sight.getId()}" id="allComments">Посмотреть другие комментарии</a>
 </div>
 <jsp:include page="includes/footer.jsp"/>
 </body>
