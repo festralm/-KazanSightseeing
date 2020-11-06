@@ -20,19 +20,19 @@
             </column>
         </createTable>
         <addUniqueConstraint
-                constraintName="user_achievement-uc1-user_id-user"
+                constraintName="user_achievement-uc1"
                 tableName="user_achievement"
                 columnNames="user_id, achievement_id"/>
         <addForeignKeyConstraint
                 baseTableName="user_achievement"
                 baseColumnNames="user_id"
-                constraintName="user_achievement-fk1-user_id"
+                constraintName="user_achievement-fk1"
                 referencedTableName="user"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseTableName="user_achievement"
                 baseColumnNames="achievement_id"
-                constraintName="user_achievement-fk2-achievement_id"
+                constraintName="user_achievement-fk2"
                 referencedTableName="achievement"
                 referencedColumnNames="id"/>
     </changeSet>

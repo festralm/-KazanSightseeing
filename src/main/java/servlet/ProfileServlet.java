@@ -1,7 +1,8 @@
 package servlet;
 
-import dao.UserDao;
+import dao.interfaces.UserDao;
 import dto.User;
+import service.UserService;
 import useful.CheckSession;
 
 import javax.servlet.ServletContext;
@@ -23,23 +24,23 @@ public class ProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         final HttpSession session = request.getSession();
-        ServletContext servletContext = getServletContext();
-        if (CheckSession.check(session, request)) {
-            final UserDao userDao = (UserDao) request.getServletContext().getAttribute("userDao");
+        if (CheckSession.checkCookie(request)) {
+            UserService userService = new UserService();
 
-            String username = (String) session.getAttribute("username");
-            User user = userDao.getUserByUsername(username);
+            int userId = (int) session.getAttribute("user_id");
+            User user = userService.getUserByUserId(userId);
 
-
-            request.setAttribute("fullname", user.getFullname());
-            request.setAttribute("username", username);
+            request.setAttribute("username", user.getUsername());
             request.setAttribute("email", user.getEmail());
-            request.setAttribute("birthdate", user.getBirthdate() == null ? "" : user.getBirthdate().toString());
+            request.setAttribute("birthdate", user.getBirthdate() == null ? "" :
+                    user.getBirthdate().toString());
+            request.setAttribute("fullname", user.getFullname());
+            request.setAttribute("photo_path", user.getPhotoPath());
 
             request.getRequestDispatcher("/profile_page.jsp").forward(request, response);
 
         } else {
-            response.sendRedirect("/authorize");
+            response.sendRedirect("/ks/authorize");
         }
     }
 }

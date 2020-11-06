@@ -20,19 +20,19 @@
             </column>
         </createTable>
         <addUniqueConstraint
-                constraintName="user_sight_visited-uc1-user_id"
+                constraintName="user_sight_visited-uc1"
                 tableName="user_sight_visited"
                 columnNames="user_id, sight_id"/>
         <addForeignKeyConstraint
                 baseTableName="user_sight_visited"
                 baseColumnNames="user_id"
-                constraintName="user_sight_visited-fk1-user_id"
+                constraintName="user_sight_visited-fk1"
                 referencedTableName="user"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseTableName="user_sight_visited"
                 baseColumnNames="sight_id"
-                constraintName="user_sight_visited-fk2-sight_id"
+                constraintName="user_sight_visited-fk2"
                 referencedTableName="sight"
                 referencedColumnNames="id"/>
     </changeSet>

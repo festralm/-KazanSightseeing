@@ -11,17 +11,20 @@ import java.io.IOException;
 
 @WebServlet("/authorize")
 public class AuthorizeServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (CheckSession.check(request.getSession(), request)) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        if (CheckSession.checkCookie(request)) {
             response.sendRedirect(request.getContextPath());
         } else {
             String path = "/sign_in_page.jsp";
             ServletContext servletContext = getServletContext();
-            RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
+            RequestDispatcher requestDispatcher = servletContext
+                    .getRequestDispatcher(path);
             requestDispatcher.forward(request, response);
         }
     }

@@ -8,12 +8,28 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
 
-    <include file="data/changelog-1-create-user-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-2-create-sight-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-3-create-achievement-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-4-create-user-achievement-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-5-create-user-sight-visited-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-6-create-user-sight-favorite-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/changelog-7-create-user-sight-wanted-table.xml" relativeToChangelogFile="true"/>
-    <include file="data/TEMP-changelog-8-insert-to-achievement-table.xml" relativeToChangelogFile="true"/>
+    <include file="data/changelog-1-create-user-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-2-create-sight-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-3-create-achievement-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-4-create-user-achievement-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-5-create-user-sight-visited-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-6-create-user-sight-favorite-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-7-create-user-sight-wanted-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-8-create-sight-archive-photo-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/changelog-9-create-comment-table.xml"
+             relativeToChangelogFile="true"/>
+
+
+    <include file="data/TEMP-changelog-1-insert-to-achievement-table.xml"
+             relativeToChangelogFile="true"/>
+    <include file="data/TEMP-changelog-3-insert-to-user-achievement-table.xml"
+             relativeToChangelogFile="true"/>
 </databaseChangeLog>

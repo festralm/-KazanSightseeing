@@ -12,7 +12,8 @@
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" unique="true"/>
             </column>
-            <column name="description" type="varchar(255)"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="varchar(3000)"/>
             <column name="photo_path" type="varchar(255)"/>
         </createTable>
     </changeSet>
