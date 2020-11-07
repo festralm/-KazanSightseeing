@@ -13,6 +13,7 @@
         <div class="ph">
             <img src="<c:out value="${sight.getPhotoPath()}"/>" class="f1">
         </div>
+
         <a href="http://localhost:8080/ks/sight?id=<c:out value="${sight.getId()}" />"><c:out value="${sight.getName()}" /> </a>
     </div>
 </c:forEach>

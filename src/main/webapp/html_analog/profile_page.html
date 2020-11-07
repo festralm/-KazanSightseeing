@@ -18,16 +18,16 @@
 </header>
 
 <div class="all" id="all">
-    <div class="ph" id="ph">
-        <div class="photo" id="photo">
-            <img src="https://sun9-57.userapi.com/gM6I4GcHzmNQX1IjvJcPgTxAQPvR8c2ZSFAm9A/ps9TYGpIuQk.jpg" alt="Avatar"
-                 class="avatar">
-        </div>
+<!--    <div class="ph" id="ph">-->
+<!--        <div class="photo" id="photo">-->
+<!--            <img src="https://sun9-57.userapi.com/gM6I4GcHzmNQX1IjvJcPgTxAQPvR8c2ZSFAm9A/ps9TYGpIuQk.jpg" alt="Avatar"-->
+<!--                 class="avatar">-->
+<!--        </div>-->
 
-        <div class="refactorImg">
-            <a class="rimg" href="http://localhost:8080/ks/change-photo">Сменить фото профиля</a>
-        </div>
-    </div>
+<!--        <div class="refactorImg">-->
+<!--            <a class="rimg" href="http://localhost:8080/ks/change-photo">Сменить фото профиля</a>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
     <div class="area1" id="area1">
@@ -37,16 +37,16 @@
                 <input name="fullname" type="text" class="input" value="${fullname}">
 
                 <h2>Имя пользователя: </h2>
-                <input name="username" type="text" class="input" value="${username}">
+                <input name="username" type="text" class="input" value="${username}" required>
 
                 <h2>E-mail:</h2>
-                <input name="email" type="text" class="input" value="${email}">
+                <input name="email" type="text" class="input" value="${email}" required>
 
                 <h2>Дата рождения:</h2>
-                <input name="birthdate" type="text" class="input" value="${birthdate}">
+                <input name="birthdate" type="date" class="input" value="${birthdate}">
 
                 <h2>Пароль</h2>
-                <input name="password" type="password" class="input" value="********">
+                <input name="password" type="password" class="input" value="********" required>
 
                 <div class="button">
                     <button class="btn">Сохранить</button>
@@ -58,7 +58,6 @@
 <div class="rightbox">
     <nav>
         <a href="http://localhost:8080/ks/achievements" id="my_archives"> Мои достижения </a>
-        <a href="http://localhost:8080/ks/rating" id="my_rating"> Мой рейтинг </a>
         <a href="http://localhost:8080/ks/visited" id="visited"> Посещенные </a>
         <a href="http://localhost:8080/ks/favorite" id="highlighted"> Любимые места </a>
         <a href="http://localhost:8080/ks/wanted" id="will_visit"> Желаю посетить </a>

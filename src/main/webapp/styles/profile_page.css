@@ -4,6 +4,9 @@
     height: 55px;
 }
 
+.area1 {
+    margin: 0 300px;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;

@@ -26,16 +26,16 @@ To change this template use File | Settings | File Templates.
 </header>
 
 <div class="all" id="all">
-    <div class="ph" id="ph">
-        <div class="photo" id="photo">
-            <img src="${photo_path}" alt="Avatar"
-                 class="avatar">
-        </div>
+<%--    <div class="ph" id="ph">--%>
+<%--        <div class="photo" id="photo">--%>
+<%--            <img src="${photo_path}" alt="Avatar"--%>
+<%--                 class="avatar">--%>
+<%--        </div>--%>
 
-        <div class="refactorImg">
-            <a class="rimg" href="http://localhost:8080/ks/change-photo">Сменить фото профиля</a>
-        </div>
-    </div>
+<%--        <div class="refactorImg">--%>
+<%--            <a class="rimg" href="http://localhost:8080/ks/change-photo">Сменить фото профиля</a>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
 
     <div class="area1" id="area1">
@@ -45,16 +45,16 @@ To change this template use File | Settings | File Templates.
                 <input name="fullname" type="text" class="input" value="${fullname}">
 
                 <h2>Имя пользователя: </h2>
-                <input name="username" type="text" class="input" value="${username}">
+                <input name="username" type="text" class="input" value="${username}" required>
 
                 <h2>E-mail:</h2>
-                <input name="email" type="text" class="input" value="${email}">
+                <input name="email" type="text" class="input" value="${email}" required>
 
                 <h2>Дата рождения:</h2>
-                <input name="birthdate" type="text" class="input" value="${birthdate}">
+                <input name="birthdate" type="date" class="input" value="${birthdate}">
 
                 <h2>Пароль</h2>
-                <input name="password" type="password" class="input" value="********">
+                <input name="password" type="password" class="input" value="********" required>
 
                 <div class="button">
                     <button class="btn">Сохранить</button>

@@ -70,15 +70,13 @@ h2{
 }
 
 .f1, .f2, .f3, .f4, .f5, .f6, .f7 {
-    /*border: 0.5px solid #CCCCCC;*/
     border-radius: 8px;
     height: 240px;
     width: 180px;
-    border: 1px solid #67C03C;
-
     float: left; /*Задаем обтекание*/
-    margin: 20px 20px 20px 50px;
-    text-align: center; /*Центрируем текст по горизонтали*/
+    margin: 25px 40px 40px 25px;
+    /*text-align: center; !*Центрируем текст по горизонтали*!*/
+    text-align: center;
     display: table;
 }
 
@@ -86,8 +84,17 @@ h2{
     height: 240px;
     width: 180px;
     border-radius: 8px;
-    background: #eaeaea;
+    background: #D6E4CF;
 }
+
+/*.sight_ph {*/
+/*    height: 240px;*/
+/*    width: 180px;*/
+/*    float: left; !*Задаем обтекание*!*/
+/*    text-align: center; !*Центрируем текст по горизонтали*!*/
+/*    !*display: table;*!*/
+/*    padding: 5px 0;*/
+/*}*/
 
 a {
     /*font-style: normal;*/
@@ -95,6 +102,7 @@ a {
     /*font-size: 20px;*/
     color: black;
     text-decoration: none; /* Убираем подчеркивание у ссылок */
+    margin-bottom: 20px;
 }
 
 a:hover {

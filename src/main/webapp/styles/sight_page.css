@@ -75,10 +75,16 @@ h1 {
 .photo {
     width: 240px;
     height: 320px;
-    background: #d9d9d9;
+    /*background: #d9d9d9;*/
     float: left;
     margin-left: 40px;
     margin-right: 40px;
+}
+
+.sight_photo {
+    width: 240px;
+    height: 320px;
+    float: left;
 }
 
 .sight {
@@ -215,7 +221,7 @@ h1 {
     width: 50px;
     height: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    background: url("/computer-icons-arrow-download-arrow.jpg") 50% 50%/20px no-repeat;
+    /*background: url("/computer-icons-arrow-download-arrow.jpg") 50% 50%/20px no-repeat;*/
 }
 
 /* Давайте вернем нашу стрелку налево. */
@@ -237,9 +243,9 @@ h1 {
     color: white;
 }
 
-.arrow {
-    background: url("/photo_2020-06-28_08-39-17.jpg") 50% 50%/20px no-repeat;
-}
+/*.arrow {*/
+/*    background: url("/photo_2020-06-28_08-39-17.jpg") 50% 50%/20px no-repeat;*/
+/*}*/
 
 /* Напишем медиа-запрос для изменения размера стрелок на устройствах с меньшим размером экрана.*/
 
@@ -323,7 +329,7 @@ h1 {
     height: 150px;
     width: 60%;
     border: 1px solid black;
-    color: white;
+    color: black;
 }
 
 .buttons {
@@ -345,4 +351,116 @@ h1 {
     margin-right: 10px;
     margin-top: 30px;
     align-items: center;
+}
+
+/*#b3:hover {
+    outline: none; !* Убираем свечение в Chrome и Safari *!
+    -webkit-appearance: none; !* Убираем рамку в Chrome и Safari *!
+    border: 1.5px solid #67C03C;
+    background: white;
+    border-radius: 8px;
+    color: #f8b800;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px 10px 15px;
+    margin-right: 10px;
+    margin-top: 30px;
+    align-items: center;
+}*/
+
+.user_comment {
+    min-height: 70px;
+    width: 70%;
+    margin-left: 80px;
+    margin-right: 60px;
+    text-align: left;
+    border-left: 3px solid #67C03C;
+}
+
+#user_name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    text-align: left;
+}
+
+.user_comment > p {
+    font-weight: normal;
+    font-size: 15px;
+    color: black;
+}
+
+.cm {
+    padding: 0 0 0 10px;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 398px;
+    padding: 10px 40px;
+    border: 1px solid #CCC;
+    border-radius: 15px;
+    background: #eee;
+}
+
+.carousel img {
+    width: 130px;
+    height: 130px;
+    /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
+    display: block;
+}
+
+.arrow {
+    position: absolute;
+    top: 60px;
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+}
+
+.arrow:focus {
+    outline: none;
+}
+
+.arrow:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.prev {
+    left: 7px;
+}
+
+.next {
+    right: 7px;
+}
+
+.gallery {
+    width: 390px;
+    overflow: hidden;
+}
+
+.gallery ul {
+    height: 130px;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* http://davidwalsh.name/remove-whitespace-inline-block */
+    font-size: 0;
+}
+
+.gallery li {
+    display: inline-block;
 }

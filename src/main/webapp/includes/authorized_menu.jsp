@@ -17,7 +17,6 @@ To change this template use File | Settings | File Templates.
             <div class="sub_nav_content">
                 <ul>
                     <li><a href="http://localhost:8080/ks/achievements" id="my_archives">Мои достижения</a></li>
-                    <li><a href="http://localhost:8080/ks/rating" id="my_rating">Мой рейтинг</a></li>
                     <li><a href="http://localhost:8080/ks/visited" id="visited">Посещенные</a></li>
                     <li><a href="http://localhost:8080/ks/favorite" id="highlighted">Любимые места</a></li>
                     <li><a href="http://localhost:8080/ks/wanted" id="will_visit">Желаю посетить</a></li>
