@@ -26,18 +26,6 @@ To change this template use File | Settings | File Templates.
 </header>
 
 <div class="all" id="all">
-<%--    <div class="ph" id="ph">--%>
-<%--        <div class="photo" id="photo">--%>
-<%--            <img src="${photo_path}" alt="Avatar"--%>
-<%--                 class="avatar">--%>
-<%--        </div>--%>
-
-<%--        <div class="refactorImg">--%>
-<%--            <a class="rimg" href="http://localhost:8080/ks/change-photo">Сменить фото профиля</a>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-
     <div class="area1" id="area1">
         <div class="box">
             <form action="edit-profile" method="post">

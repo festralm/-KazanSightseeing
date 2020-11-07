@@ -17,7 +17,8 @@
               -11.16735,-0.58775 -9.40408,4.11428 -2.93878,7.64082 h -23.5102 l 0.58776,-32.91429 -6.46531,-6.4653 -8.81633,
               -3.52653 -10.57959,-0.58776 -7.64081,-4.70204 -9.99184,3.52653 -5.2898,11.16735 0.58776,12.34285
               v 18.22041 l -89.92653,-4.11428 -9.99184,8.22857 z" fill="#FFFEFA"
-                  description-data="Казанский кремль - любовь с первого взгляда!">
+                  description-data="<img src='photo/sight/1.jpg'>Казанский кремль - любовь с первого взгляда!">
+
             </path>
         </a>
 
@@ -175,7 +176,11 @@
     </svg>
 
     <div class="description">
+        <div class="s_ph">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Annunciationcathedral.jpg/330px-Annunciationcathedral.jpg">
+        </div>
 
+        <p>Казань</p>
     </div>
 
     <img src="https://sun9-65.userapi.com/ZFW5ZAGSgWv0BQuh7Ee0bthdK3Pr-_esfzKH1w/uXRLfBbDSNo.jpg" id="mapp"

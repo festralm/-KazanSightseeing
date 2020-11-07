@@ -99,194 +99,6 @@ h1 {
 }
 
 
-/** {box-sizing:border-box}*/
-
-/*!* Slideshow container *!*/
-/*.slideshow-container {*/
-/*    max-width: 1000px;*/
-/*    position: relative;*/
-/*    margin: auto;*/
-/*}*/
-
-/*!* Hide the images by default *!*/
-/*.mySlides {*/
-/*    display: none;*/
-/*}*/
-
-/*!* Next & previous buttons *!*/
-/*.prev, .next {*/
-/*    cursor: pointer;*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    width: auto;*/
-/*    margin-top: -22px;*/
-/*    padding: 16px;*/
-/*    color: white;*/
-/*    font-weight: bold;*/
-/*    font-size: 18px;*/
-/*    transition: 0.6s ease;*/
-/*    border-radius: 0 3px 3px 0;*/
-/*}*/
-
-/*!* Position the "next button" to the right *!*/
-/*.next {*/
-/*    right: 0;*/
-/*    border-radius: 3px 0 0 3px;*/
-/*}*/
-
-/*!* On hover, add a black background color with a little bit see-through *!*/
-/*.prev:hover, .next:hover {*/
-/*    background-color: rgba(0,0,0,0.8);*/
-/*}*/
-
-/*!* Caption text *!*/
-/*.text {*/
-/*    color: #f2f2f2;*/
-/*    font-size: 15px;*/
-/*    padding: 8px 12px;*/
-/*    position: absolute;*/
-/*    bottom: 8px;*/
-/*    width: 100%;*/
-/*    text-align: center;*/
-/*}*/
-
-/*!* Number text (1/3 etc) *!*/
-/*.numbertext {*/
-/*    color: #f2f2f2;*/
-/*    font-size: 12px;*/
-/*    padding: 8px 12px;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*}*/
-
-/*!* The dots/bullets/indicators *!*/
-/*.dot {*/
-/*    cursor: pointer;*/
-/*    height: 15px;*/
-/*    width: 15px;*/
-/*    margin: 0 2px;*/
-/*    background-color: #bbb;*/
-/*    border-radius: 50%;*/
-/*    display: inline-block;*/
-/*    transition: background-color 0.6s ease;*/
-/*}*/
-
-/*.active, .dot:hover {*/
-/*    background-color: #717171;*/
-/*}*/
-
-/*!* Fading animation *!*/
-/*.fade {*/
-/*    -webkit-animation-name: fade;*/
-/*    -webkit-animation-duration: 1.5s;*/
-/*    animation-name: fade;*/
-/*    animation-duration: 1.5s;*/
-/*}*/
-
-/*@-webkit-keyframes fade {*/
-/*    from {opacity: .4}*/
-/*    to {opacity: 1}*/
-/*}*/
-
-/*@keyframes fade {*/
-/*    from {opacity: .4}*/
-/*    to {opacity: 1}*/
-/*}*/
-
-
-/* Тут начинается наша карусель. Блок .carousel-wrapper спозиционирован относительно, абертки .carousel-item абсолютно.
-. */
-.carousel-wrapper {
-    position: relative;
-}
-
-/* Абсолютно спозиционированные блоки получают высоту и ширину от родителя.
-Мы сделали их прозрачными по умолчанию, и потом они будут плавно появляться по нажатию на ссылки .arrow-prevи .arrow-next. */
-.carousel-item {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 25px 50px;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-/* Заметили padding слева и справа по 50px? Таким способом мы можем позиционировать наши ссылки! Каждая будет по 50px шириной. Кроме того, я использую пустые ссылки с фоновым рисунком таким образом, что ссылки выглядят как стрелки. Проверьте, поменяли ли вы URL ссылок с оригинальным URL, чтобы ваши ссылки не были просто прозрачными прямоугольниками. */
-.arrow {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 50px;
-    height: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /*background: url("/computer-icons-arrow-download-arrow.jpg") 50% 50%/20px no-repeat;*/
-}
-
-/* Давайте вернем нашу стрелку налево. */
-.arrow-prev {
-    left: 0;
-}
-
-/* А вторую направо. Поскольку я использую одно и то же изображение для стрелки, я поворачиваю его на 180 градусов. */
-.arrow-next {
-    right: 0;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-
-/* Мне очень нравится, как слайды карусели смотрятся на темном фоне, и если блок .carousel-itemимеет класс 'light',
-мы изменим его текст на белый и используем белые стрелки вместо серых. Проверьте еще раз, правильно ли указан путь к изображению стрелки */
-.light {
-    color: white;
-}
-
-/*.arrow {*/
-/*    background: url("/photo_2020-06-28_08-39-17.jpg") 50% 50%/20px no-repeat;*/
-/*}*/
-
-/* Напишем медиа-запрос для изменения размера стрелок на устройствах с меньшим размером экрана.*/
-
-@media (max-width: 480px) {
-    .arrow, .light.arrow {
-        background-size: 10px;
-        background-position: 10px 50%;
-    }
-}
-
-
-/* Установим целям для ссылок значение display: none; Таким образом, мы избавляемся от постоянного перепрыгивания браузера в самый верх карусели при каждом нажатии на стрелки. Это свойство действует для любых элементов, чей идентификатор начинается на 'target-item'. */
-[id^="target-item"] {
-    display: none;
-}
-
-/* Выше мы сделали все наши слайды карусели прозрачными, а это значит, что во время загрузки карусели мы будем получать вместо нее большое пустое поле.
-Изменим значение прозрачности для первого слайда на 1 для отображения. Так же устанавливаем z-index значение 2, позиционируя его выше остальных слайдов. */
-.item-1 {
-    z-index: 2;
-    opacity: 1;
-}
-
-/* Но нам не нужно, чтобы первый слайд всегда имел значение прозрачностиopacity: 1; в противном случае нам придется пробираться через этот слайд, во время ротации остальных. */
-*:target ~ .item-1 {
-    opacity: 0;
-}
-
-/* ..но если #target-item-1 в фокусе, и мы хотим показать первый слайд, тогда выбираем его с помощью значка ~ и устанавливаем прозрачность опять в 1:-) */
-#target-item-1:target ~ .item-1 {
-    opacity: 1;
-}
-
-/* Если другие target-item-# в фокусе, выбираем их используя ~ селектор, плавно показываем, и размещаем их сверху с помощьюz-index: 3.
-Тут вы можете добавить дополнительные spanс идентификатором target-item, если их у вас будет больше трех. Может сразу и добавить 10 штук.. */
-#target-item-2:target ~ .item-2, #target-item-3:target ~ .item-3 {
-    z-index: 3;
-    opacity: 1;
-}
-
-
 #b1, #b2, input[type="submit"] {
     outline: none; /* Убираем свечение в Chrome и Safari */
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
@@ -400,31 +212,35 @@ h1 {
 
 .carousel {
     position: relative;
-    width: 398px;
+    width: 50%;
+    height: 400px;
     padding: 10px 40px;
-    border: 1px solid #CCC;
+    /*border: 1px solid #CCC;*/
     border-radius: 15px;
     background: #eee;
+    margin: 0 auto;
 }
 
 .carousel img {
-    width: 130px;
-    height: 130px;
+    width: 600px;
+    height: 400px;
     /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
-    display: block;
+    /*display: block;*/
 }
 
 .arrow {
     position: absolute;
-    top: 60px;
+    top: 190px;
     padding: 0;
-    background: #ddd;
+    background: #eee;
     border-radius: 15px;
-    border: 1px solid gray;
+    border: 1px solid #9f9f9f;
     font-size: 24px;
     line-height: 24px;
     color: #444;
     display: block;
+    /*left: 10px;*/
+    /*right: 10px;*/
 }
 
 .arrow:focus {
@@ -437,20 +253,21 @@ h1 {
 }
 
 .prev {
-    left: 7px;
+    left: 2px;
 }
 
 .next {
-    right: 7px;
+    right: 2px;
 }
 
 .gallery {
-    width: 390px;
+    width: 600px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .gallery ul {
-    height: 130px;
+    height: 400px;
     width: 9999px;
     margin: 0;
     padding: 0;

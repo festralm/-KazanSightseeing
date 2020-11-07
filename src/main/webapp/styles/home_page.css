@@ -150,4 +150,10 @@ footer {
     height: 1000px;
 }
 
+.s_ph {
+    background: #bc6a6a;
+    /*height: 150px;*/
+    /*width: 150px;*/
+    position: relative;
+}
 

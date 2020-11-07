@@ -7,8 +7,8 @@ for(let li of carousel.querySelectorAll('li')) {
 }
 
 /* конфигурация */
-let width = 130; // ширина картинки
-let count = 3; // видимое количество изображений
+let width = 600; // ширина картинки
+let count = 1; // видимое количество изображений
 
 let list = carousel.querySelector('ul');
 let listElems = carousel.querySelectorAll('li');

@@ -98,3 +98,10 @@ svg {
 .area2 {
     height: 800px;
 }
+
+.s_ph {
+    background: #886262;
+    /*height: 150px;*/
+    /*width: 150px;*/
+    position: relative;
+}
